@@ -34,6 +34,7 @@
             this.CurrentProgress = new System.Windows.Forms.ToolStripStatusLabel();
             this.CurrentImage = new System.Windows.Forms.PictureBox();
             this.Message = new System.Windows.Forms.Label();
+            this.ChooseImage = new System.Windows.Forms.OpenFileDialog();
             this.CurrentStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CurrentImage)).BeginInit();
             this.SuspendLayout();
@@ -77,6 +78,7 @@
             this.CurrentImage.Location = new System.Drawing.Point(0, 0);
             this.CurrentImage.Name = "CurrentImage";
             this.CurrentImage.Size = new System.Drawing.Size(784, 539);
+            this.CurrentImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CurrentImage.TabIndex = 1;
             this.CurrentImage.TabStop = false;
             // 
@@ -89,6 +91,11 @@
             this.Message.TabIndex = 2;
             this.Message.Text = "Message";
             this.Message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Message.Visible = false;
+            // 
+            // ChooseImage
+            // 
+            this.ChooseImage.FileName = "openFileDialog1";
             // 
             // ImageViewer
             // 
@@ -100,6 +107,7 @@
             this.Controls.Add(this.CurrentStatus);
             this.Name = "ImageViewer";
             this.Text = "Image Viewer";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ImageViewer_KeyDown);
             this.Resize += new System.EventHandler(this.ImageViewer_Resize);
             this.CurrentStatus.ResumeLayout(false);
             this.CurrentStatus.PerformLayout();
@@ -117,6 +125,7 @@
         private System.Windows.Forms.ToolStripStatusLabel CurrentProgress;
         private System.Windows.Forms.PictureBox CurrentImage;
         private System.Windows.Forms.Label Message;
+        private System.Windows.Forms.OpenFileDialog ChooseImage;
     }
 }
 
